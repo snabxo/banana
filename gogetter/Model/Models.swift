@@ -11,6 +11,63 @@ struct APIErrorResponse: Codable {
     let code: String?
 }
 
+struct LoginRequest: Encodable {
+    let email: String
+    let password: String
+}
+
+struct RefreshTokenRequest: Encodable {
+    let refreshToken: String
+    
+    enum CodingKeys: String, CodingKey {
+        case refreshToken = "refresh_token"
+    }
+}
+
+struct UpdateOrderStatusRequest: Encodable {
+    let status: OrderStatus
+    let adminNotes: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case status
+        case adminNotes = "admin_notes"
+    }
+}
+
+struct AddTrackingRequest: Encodable {
+    let trackingNumber: String
+    
+    enum CodingKeys: String, CodingKey {
+        case trackingNumber = "tracking_number"
+    }
+}
+
+struct ApproveCustomOrderRequest: Encodable {
+    let estimatedPrice: Double
+    let adminNotes: String
+    
+    enum CodingKeys: String, CodingKey {
+        case estimatedPrice = "estimated_price"
+        case adminNotes = "admin_notes"
+    }
+}
+
+struct RejectCustomOrderRequest: Encodable {
+    let adminNotes: String
+    
+    enum CodingKeys: String, CodingKey {
+        case adminNotes = "admin_notes"
+    }
+}
+
+struct ApproveReviewRequest: Encodable {
+    let adminResponse: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case adminResponse = "admin_response"
+    }
+}
+
 struct AuthResponse: Codable {
     let accessToken: String
     let refreshToken: String
@@ -36,17 +93,15 @@ struct User: Codable, Identifiable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case id
-        case email
+        case id, email, role
         case firstName = "first_name"
         case lastName = "last_name"
-        case role
         case createdAt = "created_at"
     }
 }
 
 enum UserRole: String, Codable {
-    case customer = "Customer"
+    case customer = "customer"
     case admin = "admin"
     case superAdmin = "super_admin"
 }
@@ -69,13 +124,8 @@ struct Product: Codable, Identifiable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case description
-        case category
+        case id, name, description, category, images, variants
         case basePrice = "base_price"
-        case images
-        case variants
         case isMadeToOrder = "is_made_to_order"
         case processingTime = "processing_time"
         case createdAt = "created_at"
@@ -95,14 +145,11 @@ struct ProductVariant: Codable, Identifiable {
         guard let stock = stockQuantity, let threshold = lowStockThreshold else {
             return false
         }
-        
         return stock <= threshold
     }
     
     enum CodingKeys: String, CodingKey {
-        case id
-        case sku
-        case name
+        case id, sku, name
         case priceAdjustment = "price_adjustment"
         case stockQuantity = "stock_quantity"
         case lowStockThreshold = "low_stock_threshold"
@@ -136,12 +183,10 @@ struct Order: Codable, Identifiable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case id
+        case id, status, items
         case orderNumber = "order_number"
         case userId = "user_id"
-        case status
         case totalAmount = "total_amount"
-        case items
         case shippingAddress = "shipping_address"
         case trackingNumber = "tracking_number"
         case adminNotes = "admin_notes"
@@ -169,14 +214,11 @@ struct OrderItem: Codable, Identifiable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case id
+        case id, quantity, price, subTotal
         case productId = "product_id"
         case productName = "product_name"
         case variantId = "variant_id"
         case variantName = "variant_name"
-        case quantity
-        case price
-        case subTotal
     }
 }
 
@@ -216,11 +258,8 @@ struct Address: Codable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case street
-        case city
-        case state
+        case street, city, state, country
         case zipCode = "zip_code"
-        case country
     }
 }
 
@@ -423,4 +462,3 @@ struct Pagination: Codable {
         case totalItems = "total_items"
     }
 }
-

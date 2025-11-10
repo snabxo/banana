@@ -28,28 +28,28 @@ struct DashboardView: View {
                             ], spacing: AppTheme.spacingM) {
                                 StatCard(
                                     title: "Today",
-                                    value: "$\(stats.todayRevenue, specifier: "%.2f")",
+                                    value: "$\(stats.todayRevenue, default: "%.2f")",
                                     icon: "calendar",
                                     color: .green
                                 )
                                 
                                 StatCard(
                                     title: "This Week",
-                                    value: "$\(stats.weekRevenue, specifier: "%.2f")",
+                                    value: "$\(stats.weekRevenue, default: "%.2f")",
                                     icon: "calendar.badge.clock",
                                     color: .blue
                                 )
                                 
                                 StatCard(
                                     title: "This Month",
-                                    value: "$\(stats.monthRevenue, specifier: "%.2f")",
+                                    value: "$\(stats.monthRevenue, default: "%.2f")",
                                     icon: "calendar.circle",
                                     color: .purple
                                 )
                                 
                                 StatCard(
                                     title: "Total",
-                                    value: "$\(stats.totalRevenue, specifier: "%.2f")",
+                                    value: "$\(stats.totalRevenue, default: "%.2f")",
                                     icon: "chart.line.uptrend.xyaxis",
                                     color: .orange
                                 )

@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 
 @MainActor
 class DashboardViewModel: ObservableObject {
@@ -21,3 +22,4 @@ class DashboardViewModel: ObservableObject {
         isLoading = false
     }
 }
+
