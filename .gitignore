@@ -1,0 +1,19 @@
+# Build artifacts
+build/
+DerivedData/
+
+# User-specific Xcode settings
+gogetter.xcodeproj
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# VSCode
+.vscode 
+
+# macOS system files
+.DS_Store
+
+# Spotlight and Finder
+*.swp
+*.swo
