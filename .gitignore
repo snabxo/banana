@@ -2,10 +2,11 @@
 build/
 DerivedData/
 
-# User-specific Xcode settings
-gogetter.xcodeproj/xcuserdata/*
-gogetter.xcodeproj/*.xcworkspace/xcuserdata/
-gogetter.xcodeproj/*.xcodeproj/xcuserdata/
+# Ignore all user-specific Xcode data
+*.xcuserstate
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+gogetter.xcodeproj/xcuserdata/
 
 # VSCode
 .vscode 
