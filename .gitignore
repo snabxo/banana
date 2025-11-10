@@ -3,7 +3,7 @@ build/
 DerivedData/
 
 # User-specific Xcode settings
-gogetter.xcodeproj/*.xcuserdata
+gogetter.xcodeproj/xcuserdata/*
 gogetter.xcodeproj/*.xcworkspace/xcuserdata/
 gogetter.xcodeproj/*.xcodeproj/xcuserdata/
 
