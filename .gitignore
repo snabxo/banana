@@ -7,11 +7,9 @@ __pycache__/
 *.pyo
 *.pyd
 
-
 # Jupyter / Notebook files
 .ipynb_checkpoints/
 *.nbconvert.ipynb
-
 
 # Data files
 data/
@@ -29,14 +27,12 @@ datasets/
 !data_sample/
 !data_sample/**
 
-
 # Model / output artifacts
 models/
 *.pkl
 *.joblib
 *.model
 *.h5
-
 
 # Logs / temp files
 logs/
