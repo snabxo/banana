@@ -1,19 +1,63 @@
-# Build artifacts
-build/
-DerivedData/
+# Python environments
+venv/
+.env/
+.envrc
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
-# Ignore all user-specific Xcode data
-*.xcuserstate
-*.xcodeproj/xcuserdata/
-*.xcworkspace/xcuserdata/
-gogetter.xcodeproj/xcuserdata/
 
-# VSCode
-.vscode 
+# Jupyter / Notebook files
+.ipynb_checkpoints/
+*.nbconvert.ipynb
 
-# macOS system files
+
+# Data files
+data/
+datasets/
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.h5
+*.db
+*.sqlite
+
+# Allow small sample data if needed
+!data_sample/
+!data_sample/**
+
+
+# Model / output artifacts
+models/
+*.pkl
+*.joblib
+*.model
+*.h5
+
+
+# Logs / temp files
+logs/
+*.log
+tmp/
+temp/
+
+# OS / Editor junk
 .DS_Store
-
-# Spotlight and Finder
+Thumbs.db
 *.swp
-*.swo
+.vscode
+.vscode/
+.idea
+.idea/
+
+# Export clutter
+*.html
+*.tex
+
+# Keep official deliverables
+!reports/*.pdf
+!slides/*.pptx
+!visuals/*.png
