@@ -2,6 +2,7 @@
 venv/
 .env/
 .envrc
+.conda/
 __pycache__/
 *.pyc
 *.pyo

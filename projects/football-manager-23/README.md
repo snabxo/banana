@@ -82,7 +82,7 @@ All models were evaluated using interpretability as the primary criterion, since
 
 ## Tools and Technologies
 
-- Python 3.9+
+- Python 3.11
 - Pandas and NumPy — data cleaning, feature engineering, aggregation
 - Scikit-learn — clustering, optimisation
 - Matplotlib, Seaborn and Plotly — visualization and dashboards
